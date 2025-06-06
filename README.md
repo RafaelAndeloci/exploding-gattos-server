@@ -27,9 +27,31 @@
 
 ## Project setup
 
+First of all, install the projects dependencies by running:
+
 ```bash
 $ pnpm install
 ```
+
+After that, set up a .env file with the provided `.env.example`
+
+```.env
+#.env file
+API_PORT=6969
+DATABASE_URL="postgresql://postgres:prisma@localhost:5432/postgres?schema=public"
+```
+then, generate a docker image for the postgres db
+
+```bash
+docker compose up -d
+```
+
+after that you will need to run the prisma migrations
+
+```bash
+pnpx prisma migrate dev 
+```
+
 
 ## Compile and run the project
 
