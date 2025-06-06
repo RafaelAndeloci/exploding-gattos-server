@@ -9,7 +9,6 @@ async function bootstrap() {
     .setTitle('Exploding Gattos API V1')
     .setDescription('The Exploding Gattos Api!!!🐈🧨')
     .setVersion('1.0')
-    .addTag('exploding-gattos')
     .build();
 
   const documentFactory = () => SwaggerModule.createDocument(app, config);
