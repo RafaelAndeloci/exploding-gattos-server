@@ -1,8 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaClient } from 'generated/prisma';
+
+const prisma = new PrismaClient();
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  async getHello(): Promise<string> {
+    const userCount = await prisma.user.count();
+    return userCount === 0 ? 'No users have been added yet.' : 'Bananas.';
   }
 }
